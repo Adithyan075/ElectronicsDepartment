@@ -4,118 +4,163 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Electronics Engineering Department - MTI Thrissur</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+
   <style>
+    /* Base styles */
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 20px;
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
       line-height: 1.6;
-      background-color: #f9f9f9;
+      background: linear-gradient(to bottom right, #eef2f3, #8e9eab);
       color: #333;
+      overflow-x: hidden;
     }
-    header, section {
-      background-color: #fff;
-      padding: 20px;
-      margin-bottom: 20px;
-      border-radius: 5px;
-      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    h1, h2, h3 { color: #2c3e50; }
+    a { color: #2980b9; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* Navigation bar with animation */
+    nav {
+      background: #1a2030;
+      padding: 15px 0;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      animation: fadeInNav 1s ease;
     }
-    h1.title {
+    nav a {
+      color: #fff;
+      margin: 0 15px;
+      font-weight: 500;
+      position: relative;
+    }
+    nav a::after {
+      content: '';
+      width: 0;
+      height: 2px;
+      background: #4ac29a;
+      position: absolute;
+      left: 0; bottom: -4px;
+      transition: width .3s;
+    }
+    nav a:hover::after { width: 100%; }
+    @keyframes fadeInNav {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Title styles */
+    .title {
       text-align: center;
       font-size: 2.5rem;
-      font-weight: 700;
-      margin-bottom: 30px;
-      color: #2c3e50;
-      word-wrap: break-word;
+      margin: 30px 0 10px;
+      animation: fadeInSection 1.2s ease;
     }
-    h2, h3 {
-      color: #2c3e50;
-      font-weight: 700;
-      margin-bottom: 10px;
+
+    /* Section styling */
+    section, header {
+      background: rgba(255,255,255,0.85);
+      margin: 20px;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      opacity: 0;
+      animation: fadeInSection 1s forwards;
     }
-    p strong {
-      font-weight: 700;
+
+    /* Staggered scroll animation */
+    section:nth-of-type(1) { animation-delay: .4s; }
+    section:nth-of-type(2) { animation-delay: .6s; }
+    section:nth-of-type(3) { animation-delay: .8s; }
+    section:nth-of-type(4) { animation-delay: 1s; }
+    .faculty-grid { animation-delay: 1.2s; }
+
+    @keyframes fadeInSection {
+      to { opacity: 1; }
     }
-    ul {
-      list-style-type: disc;
-      margin-left: 20px;
-      padding-left: 0;
-    }
+
+    /* Faculty grid with hover animation */
     .faculty-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
-      justify-items: center;
+      padding: 0 20px 20px;
+      opacity: 0;
     }
     .faculty-member {
-      background-color: #fff;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      width: 100%;
-      max-width: 280px;
-      box-sizing: border-box;
+      background: #fff;
+      border-radius: 8px;
       padding: 15px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
       text-align: center;
-      box-shadow: 0 0 4px rgba(0,0,0,0.1);
-      transition: box-shadow 0.3s ease;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      transition: transform .3s, box-shadow .3s;
     }
     .faculty-member:hover {
-      box-shadow: 0 0 10px rgba(44, 62, 80, 0.5);
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(0,0,0,0.15);
     }
     .faculty-photo {
       width: 120px;
       height: 140px;
-      background-color: #ddd;
+      margin: 0 auto 12px;
+      border-radius: 5px;
       background-size: cover;
       background-position: center;
-      border-radius: 5px;
-      margin-bottom: 12px;
-      opacity: 1;
-      flex-shrink: 0;
-    }
-    .placeholder {
-      color: #888;
-      font-style: italic;
-    }
-    a {
-      color: #2980b9;
-      text-decoration: none;
-      word-break: break-word;
-    }
-    a:hover {
-      text-decoration: underline;
     }
 
-    /* Responsive typography and spacing for smaller screens */
-    @media (max-width: 600px) {
-      body {
-        margin: 10px;
-        font-size: 14px;
-      }
-      h1.title {
-        font-size: 1.8rem;
-        margin-bottom: 20px;
-      }
-      .faculty-member {
-        max-width: 100%;
-        padding: 12px;
-      }
-      .faculty-photo {
-        width: 100px;
-        height: 120px;
-        margin-bottom: 10px;
-      }
-      ul {
-        margin-left: 15px;
-      }
+    /* Footer with gradient and animate in */
+    footer {
+      background: linear-gradient(to right, #1e2024, #3a3f5c);
+      padding: 40px 20px;
+      color: #ddd;
+      animation: fadeInSection 1s .2s forwards;
+      opacity: 0;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+      max-width: 1100px;
+      margin: 0 auto 20px;
+    }
+    .footer-grid h3 {
+      font-weight: 500;
+      margin-bottom: 12px;
+      color: #f1f1f1;
+    }
+    .footer-grid a {
+      color: #bbb;
+    }
+    .footer-grid a:hover {
+      color: #fff;
+    }
+    .footer-bottom {
+      text-align: center;
+      font-size: .9rem;
+      border-top: 1px solid #555;
+      padding-top: 10px;
+      color: #bbb;
+    }
+
+    @media (max-width:600px) {
+      nav a { display: block; margin: 10px 0; }
     }
   </style>
 </head>
-<body>
 
-  <h1 class="title">Department Of Electronics Engineering</h1>
+<body>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#faculty">Faculty</a>
+    <a href="#contact">Contact</a>
+    <a href="#links">Important Links</a>
+  </nav>
+
+  <h1 class="title" id="home">Department Of Electronics Engineering</h1>
 
   <header>
     <h2>Electronics Engineering Department</h2>
@@ -133,9 +178,9 @@
     <h2>Mission</h2>
     <ul>
       <li><strong>Impart quality teaching-learning-experience with state of the art curriculum.</strong></li>
-      <li><strong>Enhance Training, Industry Institute Interaction and Entrepreneurship development.</strong> </li>
-      <li><strong>Encourage students to improve their Creativity and Innovation to find solutions to common needs of society in a simpler way.</strong> </li>
-      <li><strong>Foster sustained interaction with the alumni, industries, organizations and other stake holders to stay relevant in the globalized environment.</strong> </li>
+      <li><strong>Enhance Training, Industry Institute Interaction and Entrepreneurship development.</strong></li>
+      <li><strong>Encourage students to improve their Creativity and Innovation to find solutions to common needs of society in a simpler way.</strong></li>
+      <li><strong>Foster sustained interaction with the alumni, industries, organizations and other stakeholders to stay relevant in the globalized environment.</strong></li>
     </ul>
   </section>
 
@@ -155,7 +200,6 @@
 
   <section>
     <h2>Career Opportunities</h2>
-    <p><strong>Diploma holders in Electronics Engineering have opportunities in various sectors, including:</strong></p>
     <ul>
       <li>Electronics Manufacturing</li>
       <li>Telecommunications</li>
@@ -166,11 +210,10 @@
     </ul>
   </section>
 
-  <section>
+  <section id="faculty">
     <h2>Faculty Members</h2>
     <div class="faculty-grid">
-
-      <!-- Faculty Member 1 -->
+       <!-- Faculty Member 1 -->
       <div class="faculty-member">
         <div class="faculty-photo" style="background-image: url('anitha.jpg');"></div>
         <h3>Anitha M T</h3>
@@ -301,9 +344,41 @@
         <p><strong>Joining Date:</strong> [Date]</p>
         <p><strong>Qualification:</strong> B.Tech</p>
       </div>
-
     </div>
   </section>
 
+  <section id="contact">
+    <h2>Contact</h2>
+    <p><strong>Phone:</strong> 1234567890</p>
+  </section>
+
+  <footer>
+    <div class="footer-grid" id="links">
+      <div>
+        <h3>Contact</h3>
+        <p>MTI Thrissur<br>Electronics Department<br>Phone: 1234567890</p>
+      </div>
+      <div>
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#faculty">Faculty</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Important Links</h3>
+        <ul>
+          <li><a href="https://www.dtekerala.gov.in/" target="_blank">DTE Kerala</a></li>
+          <li><a href="https://www.sbte.kerala.gov.in/login" target="_blank">SBTE</a></li>
+          <li><a href="https://www.aicte-india.org/feedback/index.php" target="_blank">AICTE Feedback</a></li>
+          <li><a href="https://sitttrkerala.ac.in/index.php?r=site%2Fhome" target="_blank">SITTTR Kerala</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2025 Electronics Department, MTI Thrissur. All Rights Reserved.
+    </div>
+  </footer>
 </body>
 </html>
