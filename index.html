@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Electronics Engineering Department - MTI Thrissur</title>
   <style>
     body {
@@ -20,10 +21,11 @@
     }
     h1.title {
       text-align: center;
-      font-size: 36px;
+      font-size: 2.5rem;
       font-weight: 700;
       margin-bottom: 30px;
       color: #2c3e50;
+      word-wrap: break-word;
     }
     h2, h3 {
       color: #2c3e50;
@@ -36,10 +38,11 @@
     ul {
       list-style-type: disc;
       margin-left: 20px;
+      padding-left: 0;
     }
     .faculty-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
       justify-items: center;
     }
@@ -47,7 +50,8 @@
       background-color: #fff;
       border: 1px solid #ccc;
       border-radius: 5px;
-      width: 280px;
+      width: 100%;
+      max-width: 280px;
       box-sizing: border-box;
       padding: 15px;
       display: flex;
@@ -69,6 +73,7 @@
       border-radius: 5px;
       margin-bottom: 12px;
       opacity: 1;
+      flex-shrink: 0;
     }
     .placeholder {
       color: #888;
@@ -77,9 +82,34 @@
     a {
       color: #2980b9;
       text-decoration: none;
+      word-break: break-word;
     }
     a:hover {
       text-decoration: underline;
+    }
+
+    /* Responsive typography and spacing for smaller screens */
+    @media (max-width: 600px) {
+      body {
+        margin: 10px;
+        font-size: 14px;
+      }
+      h1.title {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+      }
+      .faculty-member {
+        max-width: 100%;
+        padding: 12px;
+      }
+      .faculty-photo {
+        width: 100px;
+        height: 120px;
+        margin-bottom: 10px;
+      }
+      ul {
+        margin-left: 15px;
+      }
     }
   </style>
 </head>
@@ -105,7 +135,7 @@
       <li><strong>Impart quality teaching-learning-experience with state of the art curriculum.</strong></li>
       <li><strong>Enhance Training, Industry Institute Interaction and Entrepreneurship development.</strong> </li>
       <li><strong>Encourage students to improve their Creativity and Innovation to find solutions to common needs of society in a simpler way.</strong> </li>
-      <li><strong>Foster sustained interaction with the alumni, industries, organizations and other stakeholders to stay relevant in the globalized environment.</strong> </li>
+      <li><strong>Foster sustained interaction with the alumni, industries, organizations and other stake holders to stay relevant in the globalized environment.</strong> </li>
     </ul>
   </section>
 
@@ -140,8 +170,9 @@
     <h2>Faculty Members</h2>
     <div class="faculty-grid">
 
+      <!-- Faculty Member 1 -->
       <div class="faculty-member">
-        <div class="faculty-photo" style="background-image: url('anitha.jpg');"></div>
+        <div class="faculty-photo" style="background-image: url('hari.jpg');"></div>
         <h3>Anitha M T</h3>
         <p><strong>Designation:</strong> Head of Department</p>
         <p><strong>Email:</strong> <a href="mailto:trial@gmail.com">trial@gmail.com</a></p>
@@ -150,6 +181,7 @@
         <p><strong>Qualification:</strong> B.Tech, M.Tech</p>
       </div>
 
+      <!-- Faculty Member 2 -->
       <div class="faculty-member">
         <div class="faculty-photo" style="background-image: url('lintu.jpg');"></div>
         <h3>Lintumol P N</h3>
@@ -160,6 +192,7 @@
         <p><strong>Qualification:</strong> B.Tech, M.Tech</p>
       </div>
 
+      <!-- Faculty Member 3 -->
       <div class="faculty-member">
         <div class="faculty-photo" style="background-image: url('hari.jpg');"></div>
         <h3>Harikrishnan I</h3>
@@ -170,6 +203,7 @@
         <p><strong>Qualification:</strong> B.Tech</p>
       </div>
 
+      <!-- Faculty Member 4 -->
       <div class="faculty-member">
         <div class="faculty-photo" style="background-image: url('nithish.jpg');"></div>
         <h3>Nithish A</h3>
@@ -180,8 +214,9 @@
         <p><strong>Qualification:</strong> B.Tech, M.Tech</p>
       </div>
 
+      <!-- Faculty Member 5 -->
       <div class="faculty-member">
-        <div class="faculty-photo" style="background-image: url('sreemathy.jpg');"></div>
+        <div class="faculty-photo" style="background-image: url('faculty5.jpg');"></div>
         <h3>Sreemathy T G</h3>
         <p><strong>Designation:</strong> Lecturer</p>
         <p><strong>Email:</strong> <a href="mailto:trial@gmail.com">trial@gmail.com</a></p>
@@ -190,8 +225,9 @@
         <p><strong>Qualification:</strong> B.Tech, M.Tech</p>
       </div>
 
+      <!-- Faculty Member 6 -->
       <div class="faculty-member">
-        <div class="faculty-photo" style="background-image: url('bindhya.jpg');"></div>
+        <div class="faculty-photo" style="background-image: url('faculty6.jpg');"></div>
         <h3>Bindhya V Balakrishnan</h3>
         <p><strong>Designation:</strong> Lecturer</p>
         <p><strong>Email:</strong> <a href="mailto:trial@gmail.com">trial@gmail.com</a></p>
@@ -200,8 +236,9 @@
         <p><strong>Qualification:</strong> B.Tech, M.Tech</p>
       </div>
 
+      <!-- Faculty Member 7 -->
       <div class="faculty-member">
-        <div class="faculty-photo" style="background-image: url('neethu.jpg');"></div>
+        <div class="faculty-photo" style="background-image: url('faculty7.jpg');"></div>
         <h3>Neethu K C</h3>
         <p><strong>Designation:</strong> Demonstrator</p>
         <p><strong>Email:</strong> <a href="mailto:example7@gmail.com">example7@gmail.com</a></p>
@@ -210,8 +247,9 @@
         <p><strong>Qualification:</strong> B.Tech, M.Tech</p>
       </div>
 
+      <!-- Faculty Member 8 -->
       <div class="faculty-member">
-        <div class="faculty-photo" style="background-image: url('praveesh.jpg');"></div>
+        <div class="faculty-photo" style="background-image: url('faculty8.jpg');"></div>
         <h3>Praveesh V V</h3>
         <p><strong>Designation:</strong> Demonstrator</p>
         <p><strong>Email:</strong> <a href="mailto:example8@gmail.com">example8@gmail.com</a></p>
@@ -220,8 +258,9 @@
         <p><strong>Qualification:</strong> B.Tech, M.Tech</p>
       </div>
 
+      <!-- Faculty Member 9 -->
       <div class="faculty-member">
-        <div class="faculty-photo" style="background-image: url('sobha.jpg');"></div>
+        <div class="faculty-photo" style="background-image: url('faculty9.jpg');"></div>
         <h3>Sobha K K</h3>
         <p><strong>Designation:</strong> Trade Instructor Grade II</p>
         <p><strong>Email:</strong> <a href="mailto:example9@gmail.com">example9@gmail.com</a></p>
@@ -230,8 +269,9 @@
         <p><strong>Qualification:</strong> B.Tech</p>
       </div>
 
+      <!-- Faculty Member 10 -->
       <div class="faculty-member">
-        <div class="faculty-photo" style="background-image: url('unnikrishnan.jpg');"></div>
+        <div class="faculty-photo" style="background-image: url('faculty10.jpg');"></div>
         <h3>Unnikrishnan K S</h3>
         <p><strong>Designation:</strong> Trade Instructor Grade II</p>
         <p><strong>Email:</strong> <a href="mailto:example10@gmail.com">example10@gmail.com</a></p>
@@ -240,8 +280,9 @@
         <p><strong>Qualification:</strong> B.Tech(Trial)</p>
       </div>
 
+      <!-- Faculty Member 11 -->
       <div class="faculty-member">
-        <div class="faculty-photo" style="background-image: url('praji.jpg');"></div>
+        <div class="faculty-photo" style="background-image: url('faculty11.jpg');"></div>
         <h3>Praji M G</h3>
         <p><strong>Designation:</strong> Tradesman</p>
         <p><strong>Email:</strong> <a href="mailto:example11@gmail.com">example11@gmail.com</a></p>
@@ -250,8 +291,9 @@
         <p><strong>Qualification:</strong> B.Tech(Trial)</p>
       </div>
 
+      <!-- Faculty Member 12 -->
       <div class="faculty-member">
-        <div class="faculty-photo" style="background-image: url('hima.jpg');"></div>
+        <div class="faculty-photo" style="background-image: url('faculty12.jpg');"></div>
         <h3>Hima A G</h3>
         <p><strong>Designation:</strong> Tradesman-Guest</p>
         <p><strong>Email:</strong> <a href="mailto:example12@gmail.com">example12@gmail.com</a></p>
