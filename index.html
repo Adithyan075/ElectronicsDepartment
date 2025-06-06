@@ -366,6 +366,68 @@
         <p><strong>Joining Date:</strong> [Date]</p>
         <p><strong>Qualification:</strong> B.Tech(Trial)</p>
       </div>
+
+      <!-- Faculty Member 12 -->
+<div class="faculty-member">
+    <div class="faculty-photo" style="background-image: url('hima.jpg');"></div>
+    <h3>Hima A G</h3>
+    <p><strong>Designation:</strong> Tradesman-Guest</p>
+    <p><strong>Email:</strong> <a href="mailto:example12@gmail.com">example12@gmail.com</a></p>
+    <p><strong>Phone:</strong> 82810 44730</p>
+    <p><strong>Joining Date:</strong> [Date]</p>
+    <p><strong>Qualification:</strong> B.Tech(Trial)</p>
+</div>
+
+<!-- Slideshow Section -->
+<div class="slideshow-container">
+    <div class="slide fade">
+        <img src="hari.jpg" style="width:100%">
+    </div>
+    <div class="slide fade">
+        <img src="anitha.jpg" style="width:100%">
+    </div>
+    <div class="slide fade">
+        <img src="lintu.jpg" style="width:100%">
+    </div>
+</div>
+
+<!-- JavaScript for Slideshow -->
+<script>
+let slideIndex = 0;
+function showSlides() {
+    let slides = document.getElementsByClassName("slide");
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) { slideIndex = 1; }
+    slides[slideIndex - 1].style.display = "block";
+    setTimeout(showSlides, 3000); // Change image every 3 seconds
+}
+showSlides();
+</script>
+
+<!-- CSS for Slideshow -->
+<style>
+.slideshow-container {
+    max-width: 600px;
+    position: relative;
+    margin: auto;
+}
+
+.slide {
+    display: none;
+}
+
+.fade {
+    animation: fadeEffect 1.5s;
+}
+
+@keyframes fadeEffect {
+    from { opacity: 0.4; }
+    to { opacity: 1; }
+}
+</style>
   </section>
 
   <section id="contact">
