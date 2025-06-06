@@ -2,218 +2,100 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Electronics Engineering Department - MTI Thrissur</title>
-
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
-
+  <title>Electronics Department Faculty</title>
   <style>
-    /* Base styles */
     body {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
-      line-height: 1.6;
-      background: linear-gradient(to bottom right, #eef2f3, #8e9eab);
+      padding: 0;
+      background-color: #f4f6f9;
       color: #333;
-      overflow-x: hidden;
     }
-    h1, h2, h3 { color: #2c3e50; }
-    a { color: #2980b9; text-decoration: none; }
-    a:hover { text-decoration: underline; }
 
-    /* Navigation bar with animation */
-    nav {
-      background: #1a2030;
-      padding: 15px 0;
+    h2 {
       text-align: center;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      animation: fadeInNav 1s ease;
-    }
-    nav a {
-      color: #fff;
-      margin: 0 15px;
-      font-weight: 500;
-      position: relative;
-    }
-    nav a::after {
-      content: '';
-      width: 0;
-      height: 2px;
-      background: #4ac29a;
-      position: absolute;
-      left: 0; bottom: -4px;
-      transition: width .3s;
-    }
-    nav a:hover::after { width: 100%; }
-    @keyframes fadeInNav {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
+      padding: 20px 0 10px;
+      color: #00587a;
+      font-size: 28px;
     }
 
-    /* Title styles */
-    .title {
-      text-align: center;
-      font-size: 2.5rem;
-      margin: 30px 0 10px;
-      animation: fadeInSection 1.2s ease;
-    }
-
-    /* Section styling */
-    section, header {
-      background: rgba(255,255,255,0.85);
-      margin: 20px;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-      opacity: 0;
-      animation: fadeInSection 1s forwards;
-    }
-
-    /* Staggered scroll animation */
-    section:nth-of-type(1) { animation-delay: .4s; }
-    section:nth-of-type(2) { animation-delay: .6s; }
-    section:nth-of-type(3) { animation-delay: .8s; }
-    section:nth-of-type(4) { animation-delay: 1s; }
-    .faculty-grid { animation-delay: 1.2s; }
-
-    @keyframes fadeInSection {
-      to { opacity: 1; }
-    }
-
-    /* Faculty grid with hover animation */
     .faculty-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
-      padding: 0 20px 20px;
-      opacity: 0;
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
     }
+
     .faculty-member {
       background: #fff;
-      border-radius: 8px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
       padding: 15px;
       text-align: center;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-      transition: transform .3s, box-shadow .3s;
+      transition: transform 0.3s ease;
     }
+
     .faculty-member:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+      transform: scale(1.03);
     }
+
     .faculty-photo {
-      width: 120px;
-      height: 140px;
-      margin: 0 auto 12px;
-      border-radius: 5px;
+      width: 100%;
+      height: 200px;
+      background-color: #ccc;
       background-size: cover;
       background-position: center;
+      border-radius: 10px;
+      margin-bottom: 15px;
     }
 
-    /* Footer with gradient and animate in */
-    footer {
-      background: linear-gradient(to right, #1e2024, #3a3f5c);
-      padding: 40px 20px;
-      color: #ddd;
-      animation: fadeInSection 1s .2s forwards;
-      opacity: 0;
-    }
-    .footer-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 20px;
-      max-width: 1100px;
-      margin: 0 auto 20px;
-    }
-    .footer-grid h3 {
-      font-weight: 500;
-      margin-bottom: 12px;
-      color: #f1f1f1;
-    }
-    .footer-grid a {
-      color: #bbb;
-    }
-    .footer-grid a:hover {
-      color: #fff;
-    }
-    .footer-bottom {
-      text-align: center;
-      font-size: .9rem;
-      border-top: 1px solid #555;
-      padding-top: 10px;
-      color: #bbb;
+    .faculty-member h3 {
+      margin: 10px 0 5px;
+      color: #00587a;
+      font-size: 20px;
     }
 
-    @media (max-width:600px) {
-      nav a { display: block; margin: 10px 0; }
+    .faculty-member p {
+      margin: 5px 0;
+      font-size: 14px;
+    }
+
+    .faculty-member a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+
+    @media screen and (max-width: 600px) {
+      h2 {
+        font-size: 22px;
+      }
+
+      .faculty-photo {
+        height: 180px;
+      }
+
+      .faculty-member p {
+        font-size: 13px;
+      }
     }
   </style>
 </head>
-
 <body>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#faculty">Faculty</a>
-    <a href="#contact">Contact</a>
-    <a href="#links">Important Links</a>
-  </nav>
-
-  <h1 class="title" id="home">Department Of Electronics Engineering</h1>
-
-  <header>
-    <h2>Electronics Engineering Department</h2>
-    <p><strong>Established:</strong> 1972</p>
-    <p><strong>Programmes Offered:</strong> 3-Year Regular Diploma</p>
-    <p><strong>Annual Intake:</strong> 60 Students</p>
-  </header>
-
-  <section>
-    <h2>Vision</h2>
-    <p><strong>To be a model Institute for providing academic and skill excellence in Electronics Engineering.</strong></p>
-  </section>
-
-  <section>
-    <h2>Mission</h2>
-    <ul>
-      <li><strong>Impart quality teaching-learning-experience with state of the art curriculum.</strong></li>
-      <li><strong>Enhance Training, Industry Institute Interaction and Entrepreneurship development.</strong></li>
-      <li><strong>Encourage students to improve their Creativity and Innovation to find solutions to common needs of society in a simpler way.</strong></li>
-      <li><strong>Foster sustained interaction with the alumni, industries, organizations and other stakeholders to stay relevant in the globalized environment.</strong></li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Laboratories</h2>
-    <ul>
-      <li>Electronics Circuits Lab</li>
-      <li>Digital Electronics Lab</li>
-      <li>Analogue Communication Lab</li>
-      <li>Industrial Electronics and PLC Lab</li>
-      <li>Microcontroller and Interfacing Lab</li>
-      <li>PCB and SPICE Lab</li>
-      <li>Software Lab</li>
-      <li>Computer Hardware Lab</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Career Opportunities</h2>
-    <ul>
-      <li>Electronics Manufacturing</li>
-      <li>Telecommunications</li>
-      <li>Automation and Control Systems</li>
-      <li>Embedded Systems</li>
-      <li>Consumer Electronics</li>
-      <li>Public Sector Undertakings</li>
-    </ul>
-  </section>
 
   <section id="faculty">
     <h2>Faculty Members</h2>
+
+    <!-- 💡 NOTE:
+      Ensure that the following image files are present in the same directory as this HTML file:
+      anitha.jpg, lintu.jpg, hari.jpg, nithish.jpg, sreemathy.jpg,
+      bindhya.jpg, neethu.jpg, praveesh.jpg, sobha.jpg, unnikrishnan.jpg,
+      praji.jpg, hima.jpg
+    -->
+
     <div class="faculty-grid">
-       <!-- Faculty Member 1 -->
+      <!-- Faculty Member 1 -->
       <div class="faculty-member">
         <div class="faculty-photo" style="background-image: url('anitha.jpg');"></div>
         <h3>Anitha M T</h3>
@@ -346,39 +228,5 @@
       </div>
     </div>
   </section>
-
-  <section id="contact">
-    <h2>Contact</h2>
-    <p><strong>Phone:</strong> 1234567890</p>
-  </section>
-
-  <footer>
-    <div class="footer-grid" id="links">
-      <div>
-        <h3>Contact</h3>
-        <p>MTI Thrissur<br>Electronics Department<br>Phone: 1234567890</p>
-      </div>
-      <div>
-        <h3>Quick Links</h3>
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#faculty">Faculty</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3>Important Links</h3>
-        <ul>
-          <li><a href="https://www.dtekerala.gov.in/" target="_blank">DTE Kerala</a></li>
-          <li><a href="https://www.sbte.kerala.gov.in/login" target="_blank">SBTE</a></li>
-          <li><a href="https://www.aicte-india.org/feedback/index.php" target="_blank">AICTE Feedback</a></li>
-          <li><a href="https://sitttrkerala.ac.in/index.php?r=site%2Fhome" target="_blank">SITTTR Kerala</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      &copy; 2025 Electronics Department, MTI Thrissur. All Rights Reserved.
-    </div>
-  </footer>
 </body>
 </html>
