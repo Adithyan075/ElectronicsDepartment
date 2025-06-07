@@ -422,5 +422,19 @@
       &copy; 2025 Electronics Department, MTI Thrissur. All Rights Reserved.
     </div>
   </footer>
+    <script>
+  let prevScrollPos = window.pageYOffset;
+  const navbar = document.getElementById("navbar");
+
+  window.onscroll = function () {
+    const currentScrollPos = window.pageYOffset;
+    if (prevScrollPos > currentScrollPos || currentScrollPos < 50) {
+      navbar.style.top = "0";
+    } else {
+      navbar.style.top = "-100px";
+    }
+    prevScrollPos = currentScrollPos;
+  };
+</script>
 </body>
 </html>
